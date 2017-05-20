@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
@@ -21,25 +22,7 @@ import { DashboardComponent } from './dashboard.component'
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      },
-      {
-        path: 'detail/:id',
-        component: HeroDetailComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [
     HeroService
@@ -48,4 +31,4 @@ import { DashboardComponent } from './dashboard.component'
 })
 
 
-export class AppModule { }
+export class AppModule {}
